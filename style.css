@@ -1,109 +1,116 @@
 body {
-    margin: 0;
+  margin: 0;
 }
 
 #screen {
-    aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 9;
 
-    display: grid;
-    grid-template: 100% / 100%;
+  display: grid;
+  grid-template: 100% / 100%;
 }
 
 #game {
-    grid-area: 1 / 1;
-       
-    display: grid;
-    grid-template: 100% / 100%;
+  grid-area: 1 / 1;
+
+  display: grid;
+  grid-template: 100% / 100%;
 }
 
 #game_background {
-    grid-area: 1 /1;
-    
-    background-image: linear-gradient(150deg, #20c903 0%, #09793b 100%);
+  grid-area: 1 /1;
+
+  background-image: linear-gradient(150deg, #20c903 0%, #09793b 100%);
 }
 
 #game_elements {
-     grid-area: 1 /1;
+  grid-area: 1 /1;
+  overflow: hidden;
+  position: relative;
 }
 
 /* positioning elements */
 
 #coin1_container {
-    position: absolute;
-    
-    top: 50vw;
-    left: 10vw;
+  position: absolute;
+
+  top: 50vw;
+  left: 10vw;
 }
 
 #coin1_sprite {
-    width: 100%;   
+  width: 100%;
 }
 
 #coin2_container {
-    position: absolute;
-    
-    top: 35vw;
-    left: 40vw;
+  position: absolute;
+
+  top: 35vw;
+  left: 40vw;
 }
 
 #coin2_sprite {
-    width: 100%;
+  width: 100%;
 }
 
 #coin3_container {
-    position: absolute;
-    
-    top: 20vw;
-    left: 70vw;
+  position: absolute;
+
+  top: 20vw;
+  left: 70vw;
 }
 
 #coin3_sprite {
-    width: 100%;
+  width: 100%;
 }
 
 #bomb_container {
-    position: absolute;
-    
-    top: 20vw;
-    left: 30vw;
+  position: absolute;
+
+  top: 20vw;
+  left: 30vw;
 }
 
 #bomb_sprite {
-    width: 100%;
+  width: 100%;
 }
 
 #heart_container {
-    position: absolute;
-    
-    top: 45vw;
-    left: 55vw;
+  position: absolute;
+
+  top: 45vw;
+  left: 55vw;
 }
 
 #heart_sprite {
-    width: 100%;
+  width: 100%;
 }
-
+.falling {
+  animation-name: falling;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+@keyframes falling {
+  0% {
+    transform: translate(0, -400%);
+  }
+  100% {
+    transform: translate(0, 300%);
+  }
+}
+.clickcoin {
+  animation-name: clickcoin;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes clickcoin {
+  from {
+    transform: scale(2);
+  }
+  to {
+    transform: scale(0);
+  }
+}
 /* Animations */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
